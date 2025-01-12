@@ -1,3 +1,17 @@
+:root[data-theme="dark"] {
+    --bg-color: #1a1a1a;
+    --container-bg: #2d2d2d;
+    --text-color: #ffffff;
+    --text-secondary: #a0a0a0;
+}
+
+:root[data-theme="light"] {
+    --bg-color: #f0f0f0;
+    --container-bg: #ffffff;
+    --text-color: #1a1a1a;
+    --text-secondary: #666666;
+}
+
 body {
     font-family: 'Space Mono', Menlo, monospace;
     display: flex;
@@ -5,7 +19,8 @@ body {
     align-items: center;
     min-height: 100vh;
     margin: 0;
-    background-color: #1a1a1a;
+    background-color: var(--bg-color);
+    transition: all 0.3s ease;
 }
 
 .main-container {
@@ -16,8 +31,8 @@ body {
 
 .container {
     text-align: center;
-    background-color: #2d2d2d;
-    color: #ffffff;
+    background-color: var(--container-bg);
+    color: var(--text-color);
     padding: 2rem;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -25,22 +40,22 @@ body {
 
 .quote-container {
     max-width: 300px;
-    background-color: #2d2d2d;
+    background-color: var(--container-bg);
     padding: 2rem;
     border-radius: 10px;
-    color: #ffffff;
+    color: var(--text-color);
 }
 
 .quote {
     font-size: 1.2rem;
     line-height: 1.6;
     margin-bottom: 1rem;
-    color: #ffffff;
+    color: var(--text-color);
     font-style: italic;
 }
 
 .quote-author {
-    color: #a0a0a0;
+    color: var(--text-secondary);
     text-align: right;
     margin: 0;
 }
@@ -48,7 +63,7 @@ body {
 .timer {
     font-size: 4rem;
     margin: 2rem 0;
-    color: #ffffff;
+    color: var(--text-color);
 }
 
 .controls button {
@@ -70,7 +85,7 @@ body {
 .mode {
     margin-top: 1rem;
     font-size: 1.2rem;
-    color: #a0a0a0;
+    color: var(--text-secondary);
 }
 
 .controls #modeToggleButton {
@@ -79,4 +94,23 @@ body {
 
 .controls #modeToggleButton:hover {
     background-color: #1976D2;
+}
+
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+}
+
+.theme-toggle button {
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    background-color: var(--container-bg);
+    color: var(--text-color);
+    transition: all 0.3s ease;
 } 

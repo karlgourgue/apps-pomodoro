@@ -5,6 +5,8 @@ const pauseButton = document.getElementById('pauseButton');
 const resetButton = document.getElementById('resetButton');
 const modeToggleButton = document.getElementById('modeToggleButton');
 const modeText = document.getElementById('mode-text');
+const themeButton = document.getElementById('themeButton');
+const html = document.documentElement;
 
 let timer;
 let timeLeft;
@@ -56,6 +58,25 @@ function toggleMode() {
     timeLeft = isWorkMode ? WORK_TIME : REST_TIME;
     updateDisplay();
 }
+
+function toggleTheme() {
+    const currentTheme = html.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    html.setAttribute('data-theme', newTheme);
+    themeButton.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+    
+    // Save preference
+    localStorage.setItem('theme', newTheme);
+}
+
+// Load saved theme preference
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme) {
+    html.setAttribute('data-theme', savedTheme);
+    themeButton.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+}
+
+themeButton.addEventListener('click', toggleTheme);
 
 startButton.addEventListener('click', startTimer);
 pauseButton.addEventListener('click', pauseTimer);
