@@ -1,0 +1,82 @@
+body {
+    font-family: 'Space Mono', Menlo, monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #1a1a1a;
+}
+
+.main-container {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+}
+
+.container {
+    text-align: center;
+    background-color: #2d2d2d;
+    color: #ffffff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.quote-container {
+    max-width: 300px;
+    background-color: #2d2d2d;
+    padding: 2rem;
+    border-radius: 10px;
+    color: #ffffff;
+}
+
+.quote {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    color: #ffffff;
+    font-style: italic;
+}
+
+.quote-author {
+    color: #a0a0a0;
+    text-align: right;
+    margin: 0;
+}
+
+.timer {
+    font-size: 4rem;
+    margin: 2rem 0;
+    color: #ffffff;
+}
+
+.controls button {
+    font-size: 1.1rem;
+    margin: 0 0.5rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Space Mono', Menlo, monospace;
+}
+
+.controls button:hover {
+    background-color: #45a049;
+}
+
+.mode {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    color: #a0a0a0;
+}
+
+.controls #modeToggleButton {
+    background-color: #2196F3;
+}
+
+.controls #modeToggleButton:hover {
+    background-color: #1976D2;
+} 
